@@ -1,0 +1,75 @@
+:root {
+    box-sizing: border-box;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    height: 100%;
+    width: 100%;
+    /* variables */
+    --pink: 254, 204, 192;
+    --sky-blue: 99, 205, 218;
+    --red: 180, 11, 17;
+
+}
+h1, h2, h3 {    font: 700; color: rgba(var(--red), 1); padding: 0px 0px; margin: 0px 0px; }
+h2 {font-size: 1.2rem;}
+body {
+    min-height: 100vh;
+    background-color: rgba(var(--pink), 0.75);
+}
+.main_grid {
+    margin-top: 200px;
+    margin-left: 80px;
+    margin-right: 80px;
+    display: grid;
+    grid-template-columns:  repeat(8, 1fr) ;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+
+.header_img  {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 100%;
+    
+    object-fit: cover;
+    
+}
+
+.header {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    align-items: center;
+    /* justify-items: ; */
+    /* display: subgrid; */
+}
+.title {
+    margin: 25px 10px;
+    grid-column: 1 / span 3;
+}
+
+.add_book_btn {
+   
+    grid-column: -4 / -2;
+    color: rgba(var(--blue), 1);
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    border-color: yellow;
+}
+.add_book_btn img {height: 50%;}
+.add_book_btn:hover {
+    cursor: grab;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+table {
+    padding: 40px 25px;
+    margin-left: 40px;
+    /* background-color: bisque; */
+
+}
+
