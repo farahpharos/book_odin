@@ -11,17 +11,15 @@
 
 }
 html {
-    filter: blur(1px);
+    height: 100vh;
+    background-color: rgba(var(--pink), 0.6);
+    /* filter: blur(1px);
     z-index: 1; 
-    overflow: hidden;
-}
+    overflow: hidden; */
+} 
 h1, h2, h3 {    font: 700; color: rgba(var(--red), 1); padding: 0px 0px; margin: 0px 0px; }
 h2 {font-size: 1.2rem;}
-body {
-    min-height: 100%;
-    background-color: rgba(var(--pink), 0.6);
-
-}
+/* body {} */
 .main_grid {
     margin-top: 200px;
     margin-left: 80px;
@@ -63,36 +61,28 @@ body .active{
     } 
 
 .book_form {
-    position: relative;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    margin-left: 20%;
+    margin-top: 10%;
     z-index: 3;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
-
-    grid-column: 2 / span 2 ;
-    grid-row: 2 / 9;
     /* grid-auto-flow: cold    ; */
  
-    background-color: rgba(var(--add_book_btn_color), 0.4);
+    background-color: rgba(var(--add_book_btn_color), 0.6);
 
     color: black;
-    justify-items: center;
-    justify-content: center;
+
     padding: 40px 30px;
     border-radius: 25px;
 
 }
-.book_form > * {
-    /* display: flex;
-    flex-direction: column; */
-    
-}
+
 .book_form input {
-    z-index: 3;
+    display: flex;
+    flex: 1 1 0;
     font-size: large;
     border-radius: 10px;
-    display: flex;
-    flex: 0 1 0;
     margin: 20px;
     /* display: flex;
     flex-direction: column;
@@ -170,21 +160,103 @@ body .active{
 } */
 
 .book_card {
+    margin-right: 10vw;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 15px 15px;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    gap: 15%;
+    padding: 60px 15px;
+    min-width: 200px;
     width: 20vw;
     height: 25vh;
     background-color: blueviolet;
     color:goldenrod;
-    justify-content: center;
-    align-items: center; 
+     /* justify-content: center; */
+    align-items: center;  
     border-radius: 75px;
 }
 
-.book_card .book_name_div{
-    display: flex;
-    text-align: center;
-    align-items: center;  
+
+
+.rmv_btn {
+    padding: 15px 20px;
+    border-radius: 25px;
+    background-color: purple;
+    color: white;
+  }
+
+
+.read_status_div {
+    width: 60px;
+    height: 34px;
 }
+
+ /* The switch - the box around the slider */
+ .switch {
+    gap: 10px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 3;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+ 
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+    /* content: 'read'; */
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
